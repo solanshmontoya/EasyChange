@@ -17,8 +17,9 @@ TRANSACTION_STATE = (
 class Company(models.Model):
 	class Meta:
 		verbose_name = 'CuentaEmpresa'
-	ruc = models.CharField('RUC', max_length = 11)
-	name = models.CharField(max_length=50)
+	ruc = models.CharField('RUC', max_length = 11, blank=True, null=True)
+	name = models.CharField('Nombre', max_length=50, blank=True, null=True)
+	account_number_company = models.TextField('Cuentas Bancarias', blank=True, null=True)
 	owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
 	created_at = models.DateTimeField(auto_now_add=True)
@@ -40,13 +41,9 @@ class BankAccount(models.Model):
 class Coin(models.Model):
 	name = models.CharField(max_length=20)
 	symbol = models.CharField(max_length=5) # s/. $ E
-
-class ExchangeRate(models.Model):
-	class Meta:
-		verbose_name = 'TipoCambio'
 	exchange_rate_sale = models.DecimalField("Venta", max_digits=10, decimal_places=2) #3.4   |  4
 	exchange_rate_purchase = models.DecimalField("Compra", max_digits=10, decimal_places=2) #3.5   | 4.1
-	coin = models.ForeignKey(Coin, on_delete=models.CASCADE) #$  E
+	
 
 class Transaction(models.Model):
 	class Meta:

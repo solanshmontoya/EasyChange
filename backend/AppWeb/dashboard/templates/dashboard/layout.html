@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!--
+    <link rel="stylesheet" type="text/css" href="{% static 'common/app.css'%}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/sidebar.css'%}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   
+<body>
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading border-bottom">
+            <img src="{% static 'web/images/logo_black.png' %}" style="max-width: 200px" >
+        </div>
+        <div class="list-group list-group-flush pt-4">
+            <a href="{% url 'dashboard:bank_account_list' %}" class="list-group-item list-group-item-action bg-light border-0">
+                <span style="color: slategray;">
+                  <i class="fas fa-user"></i>
+                </span>
+                <span class="pl-2">Mis cuentas</span>
+            </a>
+            <a href="" class="list-group-item list-group-item-action bg-light border-0">
+                    <i class="fas fa-box"></i>
+                    <span class="pl-2">Categorías</span>
+                </a>
+
+            
+            {% if perms.core.enlist_product %}
+            <a href="" class="list-group-item list-group-item-action bg-light border-0">
+                <i class="fas fa-box"></i>
+                <span class="pl-2">Productos</span>
+            </a>
+            {% endif %}
+            {% if perms.core.enlist_order %}
+                <a href="" class="list-group-item list-group-item-action bg-light border-0">
+                    <span style="color: Tomato;">
+                    <i class="fas fa-igloo"></i>
+                    </span>
+                    <span class="pl-2">Pedidos</span>
+                </a>
+            {% endif %}
+            
+            <a href="#" class="list-group-item list-group-item-action bg-light border-0">
+                <span style="color: Mediumslateblue">
+                    <i class="fab fa-font-awesome"></i>
+                </span>
+                <span class="pl-2">
+                    Otros
+                </span>
+            </a>
+            
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <a href="javascript:void(0);" class="text-secondary" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">                    
+                    {% if request.user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {% if request.user.first_name %}
+                                {{ request.user.first_name }}
+                            {% else %}
+                                {{ request.user.username }}
+                            {% endif %}
+                            </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown09">                                            
+                            <a class="dropdown-item" href="{% url 'accounts:logout' %}">Cerrar sesion</a>
+                        </div>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                        <a class="nav-link" href="{% url 'accounts:login' %}">Ingresar</a>
+                        </li>            
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            {% block content%}
+            {% endblock%}
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+{% block scripts %}
+{% endblock%}
+</body>
+</html>

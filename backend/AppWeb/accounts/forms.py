@@ -15,7 +15,7 @@ class SignupForm(forms.ModelForm):
         """Signup form meta data."""
 
         model = User
-        fields = ('first_name', 'email', 'password',)
+        fields = ('first_name','last_name', 'email','password',)
 
     def __init__(self, *args, **kwargs):
         """Set required and widgets for fields."""
@@ -62,7 +62,7 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         """profile form meta data."""
         model = Profile
-        fields = ('phone',)
+        fields = ('document', 'document_number', 'phone', 'birthdate', 'occupation', 'country', 'city', 'district', 'address', 'phone',)
 
     def __init__(self, *args, **kwargs):
         """Set required and widgets for fields."""

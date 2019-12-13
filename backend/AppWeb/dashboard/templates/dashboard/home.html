@@ -1,42 +1,106 @@
+{% extends 'dashboard/layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-4.3.1/dist/css/bootstrap.min.css'%}">    
-</head>
-<body>
-hello panel
+{% block content %}
 
-<br>
-<a class="btn btn-primary" href="{% url 'accounts:logout' %}">Salir</a>
-<br>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+Seleccione una moneda
+{% for coin in coins %}
+  <a href=".?coin={{coin.name}}"> {{ coin.name }} </a>
+{% endfor %}
+<p>
+{% if coin_selected %}
+¿En qué cuenta deseas recibir tu dinero?
+<select class="form-control">
+  {% for bc in bank_accounts %}
+    <option>{{bc.name}} - {{bc.number}}</option>
+  {% endfor %}
+</select>
+</p>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
+
+<div>
+<div class="input-group">
+<div class="input-group-prepend">
+    <span class="input-group-text"> Tu envias </span> 
+  </div>
+
+  <input type="text" class="form-control" id="coinFromValue" aria-label="Dollar amount (with dot and two decimal places)">
+  <div class="input-group-append">
+    <span class="input-group-text" id="coin-from-text">Soles</span>
   </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script type="text/javascript" src="{% static 'bootstrap-4.3.1/dist/js/bootstrap.min.js'%}"></script>
-</body>
-</html>
+
+<div class="text-center">
+  <button onclick="changeCoin()" class="btn btn-primary">Change</button>
+</div>
+
+<div class="input-group">
+<div class="input-group-prepend">
+    <span class="input-group-text"> Tu recibes </span>
+  </div>
+
+  <input type="text" readonly class="form-control" id="coinToValue" aria-label="Dollar amount (with dot and two decimal places)">
+  <div class="input-group-append">
+    <span class="input-group-text" id="coin-to-text" readonly>{{coin_selected.name}}</span>
+  </div>
+</div>
+
+</div>
+
+<button onclick="enviar()">ENVIAR</button>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+  let coinFrom = 'Soles'
+  let coinTo = '{{coin_selected.name}}'
+  let coinFromId = 1
+  let coinToId = 2
+  let exchange_rate_sale = parseFloat('{{coin_selected.exchange_rate_sale}}')
+  let exchange_rate_purchase = parseFloat('{{coin_selected.exchange_rate_purchase}}')
+  let type = 'sell'
+
+  function changeCoin(){
+    const tmpFrom = coinFrom 
+    const tmpFromId = coinFromId 
+    coinFrom = coinTo
+    coinFromId = coinToId
+
+    coinTo = tmpFrom
+    coinToId = tmpFromId
+    if(type=='sell'){
+      type = 'buy'
+    } else {
+      type = 'sell'
+    }
+
+    updateCurrencies()
+    calculate()
+  }
+
+  function updateCurrencies() {
+    $('#coin-from-text').text(coinFrom)
+    $('#coin-to-text').text(coinTo)
+  }
+
+  function enviar(){
+
+  }
+
+  $('#coinFromValue').change(function(){
+    calculate()
+   
+  })
+
+  function calculate(){
+
+   const val = parseFloat($('#coinFromValue').val())
+      if(type=='sell'){
+        $('#coinToValue').val(val* exchange_rate_sale)  
+      } else {
+        $('#coinToValue').val(val / exchange_rate_purchase)  
+
+      }
+  }
+
+</script>
+{% endblock %}
