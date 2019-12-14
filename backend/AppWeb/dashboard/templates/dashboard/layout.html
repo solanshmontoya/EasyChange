@@ -1,6 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    .list-group {
+        background-color: #878483;
+    }
+    body {
+        background: url("../static/dashboard/img/background.jpg") no-repeat;
+        content: fit;
+        background-size: cover;
+    }
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,23 +29,24 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
    
+
 <body>
 
 <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom">
-            <img src="{% static 'web/images/logo_black.png' %}" style="max-width: 200px" >
+    <div class="bg-light border-right" id="sidebar-wrapper" >
+        <div class="sidebar-heading border-bottom" style="background-color: #878483;" >
+            <img src="{% static 'dashboard/img/logolargo.png' %}" style="max-width: 200px" >
         </div>
-        <div class="list-group list-group-flush pt-4">
+        <div class="list-group list-group-flush pt-4" style="background-color: #878483;">
             <a href="{% url 'dashboard:bank_account_list' %}" class="list-group-item list-group-item-action bg-light border-0">
                 <span style="color: slategray;">
                   <i class="fas fa-user"></i>
                 </span>
                 <span class="pl-2">Mis cuentas</span>
             </a>
-            <a href="" class="list-group-item list-group-item-action bg-light border-0">
+            <a href="" class="list-group-item list-group-item-action bg-light border-0"">
                     <i class="fas fa-box"></i>
                     <span class="pl-2">Categorías</span>
                 </a>
@@ -71,7 +83,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-dark border-bottom " style="background-color: #878483;">
             <a href="javascript:void(0);" class="text-secondary" id="menu-toggle">
                 <i class="fas fa-bars"></i>
             </a>

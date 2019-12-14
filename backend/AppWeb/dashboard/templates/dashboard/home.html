@@ -1,7 +1,6 @@
 {% extends 'dashboard/layout.html' %}
 {% load static %}
 {% block content %}
-
 Seleccione una moneda
 {% for coin in coins %}
   <a href=".?coin={{coin.name}}"> {{ coin.name }} </a>
