@@ -1,6 +1,13 @@
 {% extends 'dashboard/layout.html' %}
 {% load static %}
 {% block content %}
+<div class ="row">
+  <div class="col-md-6 col-12 d-none d-sm-block d-md-block">
+    <div class="row titheaderprin" style="margin-left: 200px; margin-top: 150px">
+      <h1> El mejor <strong> tipo de cambio </strong><br> para cambiar <strong> dólares</strong>, <br> <strong> euros</strong> y <strong>soles online</strong><br> en Arequipa, Peru</h1>
+    </div>
+  </div>
+</div>  
 Seleccione una moneda
 {% for coin in coins %}
   <a href=".?coin={{coin.name}}"> {{ coin.name }} </a>

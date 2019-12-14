@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-    .list-group {
-        background-color: #878483;
+    .list-group-item {
+        background-color: #878483!important;
     }
     body {
         background: url("../static/dashboard/img/background.jpg") no-repeat;
@@ -39,41 +39,29 @@
         <div class="sidebar-heading border-bottom" style="background-color: #878483;" >
             <img src="{% static 'dashboard/img/logolargo.png' %}" style="max-width: 200px" >
         </div>
-        <div class="list-group list-group-flush pt-4" style="background-color: #878483;">
+        <div class="list-group list-group-flush pt-4" >
+            
+            <a href="" class="list-group-item list-group-item-action bg-light border-0">
+                    <i class="fas fa-building"></i>
+                    <span class="pl-2">Nosotros</span>
+                </a>
+
+            <a href="" class="list-group-item list-group-item-action bg-light border-0">
+                <i class="fas fa-blog"></i>
+                <span class="pl-2">Blog</span>
+            </a>
+            <a href="" class="list-group-item list-group-item-action bg-light border-0">
+                    <span style="color: Tomato;">
+                    <i class="fas fa-question-circle"></i>
+                    </span>
+                    <span class="pl-2">Ayuda</span>
+            </a>
+            
             <a href="{% url 'dashboard:bank_account_list' %}" class="list-group-item list-group-item-action bg-light border-0">
                 <span style="color: slategray;">
                   <i class="fas fa-user"></i>
                 </span>
                 <span class="pl-2">Mis cuentas</span>
-            </a>
-            <a href="" class="list-group-item list-group-item-action bg-light border-0"">
-                    <i class="fas fa-box"></i>
-                    <span class="pl-2">Categorías</span>
-                </a>
-
-            
-            {% if perms.core.enlist_product %}
-            <a href="" class="list-group-item list-group-item-action bg-light border-0">
-                <i class="fas fa-box"></i>
-                <span class="pl-2">Productos</span>
-            </a>
-            {% endif %}
-            {% if perms.core.enlist_order %}
-                <a href="" class="list-group-item list-group-item-action bg-light border-0">
-                    <span style="color: Tomato;">
-                    <i class="fas fa-igloo"></i>
-                    </span>
-                    <span class="pl-2">Pedidos</span>
-                </a>
-            {% endif %}
-            
-            <a href="#" class="list-group-item list-group-item-action bg-light border-0">
-                <span style="color: Mediumslateblue">
-                    <i class="fab fa-font-awesome"></i>
-                </span>
-                <span class="pl-2">
-                    Otros
-                </span>
             </a>
             
         </div>
@@ -139,7 +127,7 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-    $("#wrapper").toggleClass("toggled");
+    
 </script>
 
 {% block scripts %}
