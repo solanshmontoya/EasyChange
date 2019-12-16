@@ -30,23 +30,29 @@ class Company(models.Model):
 
 #for client bank account
 class Bank(models.Model):
-	name = models.CharField(max_length=50)
+	class Meta:
+		verbose_name = 'Banco'
+
+	name = models.CharField('Nombre', max_length=50)
 	def __str__(self):
 		return self.name
 
 #client bank account 
 class BankAccount(models.Model):
+	class Meta:
+		verbose_name = 'Cuenta bancaria'
+
 	client = models.ForeignKey(User, on_delete=models.CASCADE)
 	name = models.CharField('Nombre de la Cuenta', max_length = 100)
 	bank = models.ForeignKey(Bank, on_delete=models.CASCADE)
-	number = models.CharField(max_length=100)
+	number = models.CharField('Numero', max_length=100)
 	type = models.IntegerField(choices=BANK_ACCOUNT_TYPE)
 	def __str__(self):
 		return self.name
  
 class Coin(models.Model):
-	name = models.CharField(max_length=20)
-	symbol = models.CharField(max_length=5) # s/. $ E
+	name = models.CharField('Nombre', max_length=20)
+	symbol = models.CharField('Simbolo', max_length=5) # s/. $ E
 	exchange_rate_sale = models.DecimalField("Venta", max_digits=10, decimal_places=2) #3.4   |  4
 	exchange_rate_purchase = models.DecimalField("Compra", max_digits=10, decimal_places=2) #3.5   | 4.1
 	
@@ -57,13 +63,13 @@ class Transaction(models.Model):
 	#choosen (elegir de las cuentas que ingrese el usuario)
 	#receptionAccount = 
 	coin_transform = models.ForeignKey(Coin, on_delete=models.CASCADE, related_name='coin_transform')
-	operation_type = models.CharField(max_length=10)
+	operation_type = models.CharField('Tipo de operacion', max_length=10)
 	exchange_rate = models.DecimalField("Exchange", max_digits=10, decimal_places=3) #3.4   |  4
 	amount_from = models.DecimalField('Inicial', max_digits=10, decimal_places=2)
 	amount_to = models.DecimalField('Final', max_digits=10, decimal_places=2)
 	client_bank_account = models.ForeignKey(BankAccount, on_delete=models.CASCADE, related_name='client_bank_account') #for receive the money
 	company_bank_account = models.ForeignKey(BankAccount, on_delete=models.CASCADE, related_name='company_bank_account') # for sent the money
-	operation_number = models.CharField(max_length=20)
+	operation_number = models.CharField('Numero de Operacion', max_length=20)
 	state = models.IntegerField(TRANSACTION_STATE, default=1)
 	
 	created_at = models.DateTimeField(auto_now_add=True)

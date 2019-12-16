@@ -61,7 +61,7 @@
             <br>
              <center>
             <div class="col-1">
-              <button onclick="changeCoin()" class="button button5"><i class="fas fa-exchange-alt"></i></button>
+              <button type="button" onclick="changeCoin()" class="button button5"><i class="fas fa-exchange-alt"></i></button>
             </div>
           </center>
      
@@ -118,6 +118,7 @@
 
     updateCurrencies()
     calculate()
+    return false;
   }
 
   function updateCurrencies() {

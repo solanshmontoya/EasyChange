@@ -15,7 +15,7 @@ class SignupForm(forms.ModelForm):
         """Signup form meta data."""
 
         model = User
-        fields = ('first_name','last_name', 'email','password',)
+        fields = ('username','first_name','last_name', 'email','password',)
 
     def __init__(self, *args, **kwargs):
         """Set required and widgets for fields."""

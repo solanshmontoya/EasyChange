@@ -33,7 +33,7 @@ class Profile(models.Model):
     city = models.CharField('Ciudad', max_length = 100, blank=True, null=True)
     district = models.CharField('Distrito', max_length = 100, blank=True, null=True)
     address = models.CharField('Direccion', max_length = 150, blank=True, null=True)
-    occupation = models.IntegerField(choices=OCCUPATION_TYPE, blank=True, null=True)
+    occupation = models.IntegerField('Ocupacion', choices=OCCUPATION_TYPE, blank=True, null=True)
 
     #created_at = models.DateTimeField(auto_now_add=True)
     #updated_at = models.DateTimeField(auto_now=True)

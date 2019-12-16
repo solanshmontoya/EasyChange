@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import permission_required
 #@permission_required('core.enlist_bank_account')
 # @user_passes_test(lambda u: u.is_superuser or u.is_staff)
 def enlist(request):
-    items = models.BankAccount.objects.all()
+    items = models.BankAccount.objects.filter(client=request.user)
     print(items)
     return render(request, 'dashboard/bankAccounts/list.html', locals())
 
