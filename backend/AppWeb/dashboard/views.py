@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from enterprise.models import Coin, BankAccount, Company, Transaction
+import decimal
 
 def home(request):
 	coins = Coin.objects.all()
@@ -19,32 +20,34 @@ def dashboard(request):
 
 @login_required
 def information(request):
-	if request.POST:
-		amount_from = request.POST.get('coinFromValue')
-		coin_selected_id = request.POST.get('coinSelected')
-		bank_acount_selected =  request.POST.get('bankAccountSelected')
-		operation =  request.POST.get('operation')
+	company = Company.objects.all().first()
+	#if request.POST:
+	#	amount_from = request.POST.get('coinFromValue')
+	#	coin_selected_id = request.POST.get('coinSelected')
+	#	bank_acount_selected_id =  request.POST.get('bankAccountSelected')
+	#	operation =  request.POST.get('operation')
 
-		coin_selected = Coin.objects.get(id=coin_selected_id)
-		if operation == 'SELL':
-			amount_to = coin_selected.exchange_rate_sale * amount_from
-			exchange_rate = coin_selected.exchange_rate_sale
-		else:
-			amount_to = coin_selected.exchange_rate_purchase * amount_from
-			exchange_rate = coin_selected.exchange_rate_purchase
+	#	coin_selected = Coin.objects.get(id=coin_selected_id)
+#		if operation == 'SELL':
+#			amount_to = coin_selected.exchange_rate_sale * decimal.Decimal(amount_from)
+#			exchange_rate = coin_selected.exchange_rate_sale
+#		else:
+#			amount_to = coin_selected.exchange_rate_purchase * decimal.decimal(amount_from)
+#			exchange_rate = coin_selected.exchange_rate_purchase
 
 
-		transaction = Transaction(coin_transform=coin_selected, 
-			operation_type= operation, 
-			exchange_rate =exchange_rate, 
-			amount_from=amount_from,
-			amount_to=amount_to)
+	#	transaction = Transaction(coin_transform=coin_selected, 
+	#		operation_type= operation, 
+	#		exchange_rate =exchange_rate, 
+	#		amount_from=amount_from,
+	#		amount_to=amount_to,
+	#		client_bank_account__id=bank_acount_selected_id
+#
 
-		transaction.save()
-
-		company = Company.objects.all().first()
-		
-		return render(request, 'dashboard/information.html', locals())
+#			)
+#
+#		transaction.save()
+#		return render(request, 'dashboard/information.html', locals())
 	return render(request, 'dashboard/information.html', locals())
 
 @login_required

@@ -22,67 +22,69 @@
   </div>
  
   <div class="col-6" > 
-    <div style="    margin: 100px 100px;
-    width: 400px;
-    text-align: center;">
-      <h3><strong>Paso 1/3:</strong> Seleccione una moneda</h3>
-      {% for coin in coins %}
-        <a class="btn btn-outline-dark" href=".?coin={{coin.name}}" role="button">{{ coin.name }}</a>
-      {% endfor %}
-      <p>
+    <form action="{% url 'dashboard:transaction' %}" method="POST">
+      <div style="    margin: 100px 100px;
+      width: 400px;
+      text-align: center;">
+        <h3><strong>Paso 1/3:</strong> Seleccione una moneda</h3>
+        {% for coin in coins %}
+          <a class="btn btn-outline-dark" href=".?coin={{coin.name}}" role="button">{{ coin.name }}</a>
+        {% endfor %}
+        <p>
+          <br>
+          {% if coin_selected %}
+          {% csrf_token %}
+          <input type="hidden" name="coinSelected" value="{{coin_selected.id}}">
+          <input type="hidden" name="operation" id="operation" value="SELL">
+          <h4>¿En qué cuenta deseas recibir tu dinero?</h4>
+          {% if user.is_authenticated %}
+            <select class="form-control" name="bankAccountSelected">
+              {% for bc in bank_accounts %}
+                <option>{{bc.name}} - {{bc.number}}</option>
+              {% endfor %}
+            </select>
+          {% endif %}
+        </p>
+
+
+        <div class="">
+            <div class="input-group" >
+              <div class="input-group-prepend" >
+                <span class="input-group-text"> Tu envias </span> 
+              </div>
+
+              <input type="text" class="form-control" id="coinFromValue" name="coinFromValue"  aria-label="Dollar amount (with dot and two decimal places)">
+              <div class="input-group-append">
+                <span class="input-group-text" id="coin-from-text">Soles</span>
+              </div>
+            </div>
+            <br>
+             <center>
+            <div class="col-1">
+              <button onclick="changeCoin()" class="button button5"><i class="fas fa-exchange-alt"></i></button>
+            </div>
+          </center>
+     
+            <br>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> Tu recibes </span>
+              </div>
+
+              <input type="text" readonly class="form-control" id="coinToValue" aria-label="Dollar amount (with dot and two decimal places)">
+              <div class="input-group-append">
+                <span class="input-group-text" id="coin-to-text" readonly>{{coin_selected.name}}</span>
+              </div>
+          </div>
+               </div>
         <br>
-        {% if coin_selected %}
-        <input type="hidden" name="coinSelected" value="{{coinSelected.id}}">
-        <input type="hidden" name="operation" id="operation" value="SELL">
-        <h4>¿En qué cuenta deseas recibir tu dinero?</h4>
-        {% if user.is_authenticated %}
-          <select class="form-control" name="bankAccountSelected">
-            {% for bc in bank_accounts %}
-              <option>{{bc.name}} - {{bc.number}}</option>
-            {% endfor %}
-          </select>
-        {% endif %}
-      </p>
-
-
-      <div class="">
-          <div class="input-group" >
-            <div class="input-group-prepend" >
-              <span class="input-group-text"> Tu envias </span> 
-            </div>
-
-            <input type="text" class="form-control" id="coinFromValue" name="coinFromValue"  aria-label="Dollar amount (with dot and two decimal places)">
-            <div class="input-group-append">
-              <span class="input-group-text" id="coin-from-text">Soles</span>
-            </div>
-          </div>
-          <br>
-           <center>
-          <div class="col-1">
-            <button onclick="changeCoin()" class="button button5"><i class="fas fa-exchange-alt"></i></button>
-          </div>
+        <center>
+          <button class="btn btn-dark" type="submit" role="button">Inicia tu operación</a>
         </center>
-   
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> Tu recibes </span>
-            </div>
-
-            <input type="text" readonly class="form-control" id="coinToValue" aria-label="Dollar amount (with dot and two decimal places)">
-            <div class="input-group-append">
-              <span class="input-group-text" id="coin-to-text" readonly>{{coin_selected.name}}</span>
-            </div>
-        </div>
-             </div>
-      <br>
-      <center>
-        <a class="btn btn-dark" href="{% url 'dashboard:transaction' %}" role="button">Inicia tu operación</a>
-      </center>
-    
-      {% endif %}
-    </div>
-
+      
+        {% endif %}
+      </div>
+    </form>
 </div>
   
  
