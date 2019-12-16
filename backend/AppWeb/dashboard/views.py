@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from enterprise.models import Coin, BankAccount, Company
+from enterprise.models import Coin, BankAccount, Company, Transaction
 
 def home(request):
 	coins = Coin.objects.all()
@@ -19,9 +19,43 @@ def dashboard(request):
 
 @login_required
 def information(request):
-	company = Company.objects.all().first()
+	if request.POST:
+		amount_from = request.POST.get('coinFromValue')
+		coin_selected_id = request.POST.get('coinSelected')
+		bank_acount_selected =  request.POST.get('bankAccountSelected')
+		operation =  request.POST.get('operation')
+
+		coin_selected = Coin.objects.get(id=coin_selected_id)
+		if operation == 'SELL':
+			amount_to = coin_selected.exchange_rate_sale * amount_from
+			exchange_rate = coin_selected.exchange_rate_sale
+		else:
+			amount_to = coin_selected.exchange_rate_purchase * amount_from
+			exchange_rate = coin_selected.exchange_rate_purchase
+
+
+		transaction = Transaction(coin_transform=coin_selected, 
+			operation_type= operation, 
+			exchange_rate =exchange_rate, 
+			amount_from=amount_from,
+			amount_to=amount_to)
+
+		transaction.save()
+
+		company = Company.objects.all().first()
+		
+		return render(request, 'dashboard/information.html', locals())
 	return render(request, 'dashboard/information.html', locals())
 
 @login_required
 def confirm_transaction(request):
 	return render(request, 'dashboard/confirm_transaction.html', locals())
+
+def nosotros(request):
+	return render(request, 'dashboard/nosotros.html', locals())
+
+def blog(request):
+	return render(request, 'dashboard/blog.html', locals())
+
+def ayuda(request):
+	return render(request, 'dashboard/ayuda.html', locals())

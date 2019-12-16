@@ -32,9 +32,11 @@
       <p>
         <br>
         {% if coin_selected %}
+        <input type="hidden" name="coinSelected" value="{{coinSelected.id}}">
+        <input type="hidden" name="operation" id="operation" value="SELL">
         <h4>¿En qué cuenta deseas recibir tu dinero?</h4>
         {% if user.is_authenticated %}
-          <select class="form-control">
+          <select class="form-control" name="bankAccountSelected">
             {% for bc in bank_accounts %}
               <option>{{bc.name}} - {{bc.number}}</option>
             {% endfor %}
@@ -49,7 +51,7 @@
               <span class="input-group-text"> Tu envias </span> 
             </div>
 
-            <input type="text" class="form-control" id="coinFromValue" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" class="form-control" id="coinFromValue" name="coinFromValue"  aria-label="Dollar amount (with dot and two decimal places)">
             <div class="input-group-append">
               <span class="input-group-text" id="coin-from-text">Soles</span>
             </div>
@@ -106,7 +108,9 @@
     coinToId = tmpFromId
     if(type=='sell'){
       type = 'buy'
+      $('#operation').val('BUY')
     } else {
+      $('#operation').val('SELL')
       type = 'sell'
     }
 

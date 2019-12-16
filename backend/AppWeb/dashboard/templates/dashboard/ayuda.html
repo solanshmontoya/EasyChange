@@ -1,0 +1,713 @@
+{% extends 'dashboard/layout.html' %}
+{% load static %}
+{% block content %}
+        
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ayuda - EasyChange</title>
+  <link rel="shortcut icon" type="image/svg+xml" href="https://kambista.com/wp-content/themes/Kambista/images/favicon.svg" sizes="any">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://kambista.com/favicon.ico" sizes="16x16">
+  <link rel="shortcut icon" type="image/x-icon" href="https://kambista.com/favicon.ico" sizes="32x32">
+  <link rel="shortcut icon" type="image/x-icon" href="https://kambista.com/favicon.ico" sizes="64x64">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/4.0.6/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+  <meta charset="UTF-8">
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=3218bc14-687a-40e0-b5b9-32b77439b933" type="6987f059a78b9c0a9e0227dd-text/javascript"> </script>
+
+  
+<!-- This site is optimized with the Yoast SEO plugin v12.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<link rel="canonical" href="https://kambista.com/ayuda/" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Ayuda - Kambista" />
+<meta property="og:description" content="Manuales Información básica Seguridad Cuenta Pagar con transferencia Tipo de Cambio Verificación Técnicas Legal" />
+<meta property="og:url" content="https://kambista.com/ayuda/" />
+<meta property="og:site_name" content="Kambista" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Manuales Información básica Seguridad Cuenta Pagar con transferencia Tipo de Cambio Verificación Técnicas Legal" />
+<meta name="twitter:title" content="Ayuda - Kambista" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kambista.com/#website","url":"https://kambista.com/","name":"Kambista","potentialAction":{"@type":"SearchAction","target":"https://kambista.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://kambista.com/ayuda/#webpage","url":"https://kambista.com/ayuda/","inLanguage":"es-PE","name":"Ayuda - Kambista","isPartOf":{"@id":"https://kambista.com/#website"},"datePublished":"2019-10-24T21:15:35+00:00","dateModified":"2019-11-22T21:39:57+00:00"}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//kambista.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="6987f059a78b9c0a9e0227dd-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/kambista.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.5"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://kambista.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='bokez_frontend-css'  href='https://kambista.com/wp-content/plugins/bokez-awesome-gutenberg-blocks/dist/style.build.css?ver=2.1.3' type='text/css' media='all' />
+<style id='bokez_frontend-inline-css' type='text/css'>
+
+		
+			.bokez-row .bokez-row-container{
+				max-width: 100% !important;
+			}
+			
+		
+</style>
+<link rel='stylesheet' id='bodhi-svgs-attachment-css'  href='https://kambista.com/wp-content/plugins/svg-support/css/svgs-attachment.css?ver=5.2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='hover-css'  href='https://kambista.com/wp-content/themes/Kambista/css/hover-min.css?ver=1.5' type='text/css' media='all' />
+<link rel='stylesheet' id='principal-css'  href='https://kambista.com/wp-content/themes/Kambista/css/style.css?ver=1.5' type='text/css' media='all' />
+<script type="6987f059a78b9c0a9e0227dd-text/javascript" src='https://kambista.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type="6987f059a78b9c0a9e0227dd-text/javascript" src='https://kambista.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type="6987f059a78b9c0a9e0227dd-text/javascript">
+/* <![CDATA[ */
+var cssTarget = "img.style-svg";
+var ForceInlineSVGActive = "false";
+/* ]]> */
+</script>
+<script type="6987f059a78b9c0a9e0227dd-text/javascript" src='https://kambista.com/wp-content/plugins/svg-support/js/min/svgs-inline-min.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='https://kambista.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kambista.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://kambista.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.2.5" />
+<link rel='shortlink' href='https://kambista.com/?p=294' />
+<link rel="alternate" type="application/json+oembed" href="https://kambista.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkambista.com%2Fayuda%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://kambista.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkambista.com%2Fayuda%2F&#038;format=xml" />
+
+<!--BEGIN: TRACKING CODE MANAGER BY INTELLYWP.COM IN HEAD//-->
+<!-- Google Tag Manager -->
+<script type="6987f059a78b9c0a9e0227dd-text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P95L75Z');</script>
+<!-- End Google Tag Manager -->
+<!--END: https://wordpress.org/plugins/tracking-code-manager IN HEAD//-->    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-734875765" type="6987f059a78b9c0a9e0227dd-text/javascript"></script>
+<script type="6987f059a78b9c0a9e0227dd-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-734875765');
+</script>
+<!-- Facebook Pixel Code -->
+<script type="6987f059a78b9c0a9e0227dd-text/javascript">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '340818206839529');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=340818206839529&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+<body class='ayudapage'>
+ 
+          <section>
+      	<div class="headerayuda">
+      		
+      	</div>
+      	<div class="container" style="text-align: justify;">
+        	
+<h3>Manuales</h3>
+
+
+    <div class="bokez-block bokez-accordion bokez-accordion-" style="text-align:;">
+                <div data-id="0" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo crear una cuenta? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                <a rel="noreferrer noopener" href="https://s3-sa-east-1.amazonaws.com/kambistas3/files/COMO_REGISTRARTE.pdf" target="_blank">Ver manual (pdf)</a>
+            </p>
+
+        </div>        <div data-id="1" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo hacer una operación? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                 <a rel="noreferrer noopener" href="https://s3-sa-east-1.amazonaws.com/kambistas3/files/COMO_HACER_UNA_OPERACION.pdf" target="_blank">Ver manual (pdf)</a> 
+            </p>
+
+        </div>
+    </div>
+
+
+<h3> Información básica </h3>
+
+
+    <div class="bokez-block bokez-accordion bokez-accordion-" style="text-align:;">
+                <div data-id="0" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 4 cosas que debes saber antes de transferir 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                <strong>No aceptamos efectivo o cheques. </strong><br>Las transferencias serán solo de manera interbancaria y vía online. Por eso, no podemos recibir o enviar dinero en efectivo o en cheques. Solo podemos enviar dinero de una cuenta bancaria a otra cuenta. <br><br><strong>Detalles correctos en tu perfil </strong><br>Cuando introduzcas los datos, por favor, utiliza tu nombre completo (no diminutivos o iniciales), tu domicilio real, tu número telefónico real y una dirección de correo que revises con frecuencia. <br><br><strong>Verificación de tu cuenta </strong><br>Como empresa, necesitamos saber quién realiza las transferencias. En cierto punto, tarde o temprano, tu identidad tendrá que ser verificada. <br><br><strong>Enviar tu dinero </strong><br>Nuestra plataforma digital tiene todos los certificados de seguridad que son necesarios para que puedas enviar tu dinero con tranquilidad.
+            </p>
+
+        </div>        <div data-id="1" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo inicio una transferencia para cambiar dinero online? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Puedes ver un tutorial detallado en: <a rel="noreferrer noopener" href="https://youtu.be/z6OjLOvb9oQ?t=15s" target="_blank">Video</a><br>Asimismo, puedes contactarnos a <a href="/cdn-cgi/l/email-protection#91f2feffe5f0f2e5fed1faf0fcf3f8e2e5f0bff2fefc"><span class="__cf_email__" data-cfemail="33505c5d475250475c7358525e515a4047521d505c5e">[email&#160;protected]</span></a>, por inbox de <a rel="noreferrer noopener" href="https://www.facebook.com/kambistaperu" target="_blank">facebook</a> o por el livechat de EasyChange.com  
+            </p>
+
+        </div>        <div data-id="2" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cuánto cuesta usar EasyChange? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                EasyChange no cobra ninguna comisión por el servicio. Solo utiliza el tipo de cambio contemplado en los mercados financieros al momento de realizar la orden de compra. Puedes consultar el tipo de cambio, eligiendo el monto que deseas enviar o recibir para que se calcule el resultado automáticamente. Además, te indicamos cuánto te ahorras aproximadamente en comparación a la tasa promedio de los bancos. 
+            </p>
+
+        </div>        <div data-id="3" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 Cancelar una transferencia 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                 Si por algún motivo deseas cancelar la transferencia que ya realizaste, por favor, escríbenos un correo lo antes posible a <a href="/cdn-cgi/l/email-protection#6e0d01001a0f0d1a012e050f030c071d1a0f400d0103"><span class="__cf_email__" data-cfemail="02616d6c766361766d4269636f606b7176632c616d6f">[email&#160;protected]</span></a> para coordinar la cancelación y verificar el monto que debemos reembolsarte. 
+            </p>
+
+        </div>        <div data-id="4" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 Seguimiento de mi transferencia 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Todas las transferencias que hayas realizado quedarán registradas en tu perfil. Además, serás notificado vía correo electrónico cuando se realice con éxito cada transacción. 
+            </p>
+
+        </div>
+    </div>
+
+
+<h3> Seguridad </h3>
+
+
+    <div class="bokez-block bokez-accordion bokez-accordion-" style="text-align:;">
+                <div data-id="0" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 Seguridad 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Nuestras operaciones están enmarcadas dentro del marco regulatorio pertinente establecido por la Superintendencia de Banca y Seguros (SBS). Nuestra licencia es 2017-00001857 y fue otorgada en la Resolución N. 00335-2017. 
+            </p>
+
+        </div>        <div data-id="1" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Qué tan seguro es usar EasyChange para cambiar dinero online? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                La seguridad de tus transacciones está garantizada por el banco en el cual posees una cuenta. Asimismo, somos una empresa constituida formalmente y con la regulación respectiva de la SBS. 
+            </p>
+
+        </div>        <div data-id="2" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Qué significa estar registrados en la SBS? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                De acuerdo a la ley 29028 y la resolución de la SBS N486 2008, hemos designado un Oficial de Cumplimiento que se encargará de registrar las operaciones realizadas por EasyChange y validar los datos del usuario, reportar a la Unidad de Inteligencia Financiera (UIF) las operaciones sospechosas y capacitar y monitorear a los trabajadores de la organización. 
+            </p>
+
+        </div>        <div data-id="3" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cuál es mi privacidad? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Tu información otorgada a EasyChange estará completamente segura en el marco de las Políticas de Privacidad de la empresa. Puedes leer más <a rel="noreferrer noopener" href="https://kambista.com/" target="_blank">aquí.</a> 
+            </p>
+
+        </div>
+    </div>
+
+
+<h3>Cuenta</h3>
+
+
+    <div class="bokez-block bokez-accordion bokez-accordion-" style="text-align:;">
+                <div data-id="0" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo edito los datos de mi perfil? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Una vez que ya realizaste la primera transferencia, si hay algún error en los datos o si simplemente has cambiado de domicilio, el equipo de soporte al cliente de EasyChange puede ayudarte a corregir esta información. En este caso, necesitarás enviarnos un correo con algún tipo de prueba para demostrar que estos datos son correctos a <a href="/cdn-cgi/l/email-protection#bcdfd3d2c8dddfc8d3fcd7ddd1ded5cfc8dd92dfd3d1"><span class="__cf_email__" data-cfemail="96f5f9f8e2f7f5e2f9d6fdf7fbf4ffe5e2f7b8f5f9fb">[email&#160;protected]</span></a>. 
+            </p>
+
+        </div>        <div data-id="1" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo cambio mi correo electrónico? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Tu dirección de correo electrónico sólo podrá ser cambiada comunicándote con nosotros vía correo electrónico. Solo debes escribirnos a <a href="/cdn-cgi/l/email-protection#ccafa3a2b8adafb8a38ca7ada1aea5bfb8ade2afa3a1"><span class="__cf_email__" data-cfemail="7e1d11100a1f1d0a113e151f131c170d0a1f501d1113">[email&#160;protected]</span></a>
+            </p>
+
+        </div>        <div data-id="2" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo cambio los datos del destinatario? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Si ya has creado una orden de compra y hay datos del destinatario que no son correctos, por favor ponte en contacto con nosotros lo antes posible para que podamos ayudarte. Puedes escribirnos un mail a <a href="/cdn-cgi/l/email-protection#88e7f8edfae9ebe1e7e6edfbc8e3e9e5eae1fbfce9a6ebe7e5"><span class="__cf_email__" data-cfemail="7e110e1b0c1f1d1711101b0d3e151f131c170d0a1f501d1113">[email&#160;protected]</span></a> con tus datos telefónicos y te estaremos llamando a la brevedad para solucionar el problema. 
+            </p>
+
+        </div>        <div data-id="3" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Olvidaste tu contraseña? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Puedes crear una nueva contraseña dándole click a “olvidé mi contraseña“. Recibirás un correo electrónico con las instrucciones a seguir para restablecer tu contraseña. 
+            </p>
+
+        </div>        <div data-id="4" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Qué es mi historial de pagos? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Todas tus transacciones quedan registradas y ligadas a tu cuenta. Puedes verificar el avance de cada transacción que has colocado. Asimismo, podrás seleccionar transacciones frecuentes para poder realizarlas con más rapidez. 
+            </p>
+
+        </div>        <div data-id="5" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                ¿Cuál es el tiempo estimado de transferencia? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                El tiempo estimado para hacer efectiva la transferencia es de unos minutos luego de verificar que el cliente realizó la transferencia de los fondos. Adicionalmente, el tiempo que demore en llegar el dinero a nuestras cuentas se encuentra sujeto a los tiempos de respuesta de los sistemas bancarios. 
+            </p>
+
+        </div>        <div data-id="6" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo cancelo el pago?
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                El pago se realizará por transferencias por internet desde una cuenta bancaria o depósitos en oficina.Bajo ninguna circunstancia EasyChange realizará operaciones con efectivo. 
+            </p>
+
+        </div>        <div data-id="7" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cuál es la prueba de que se realizó el pago? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                La constancia de tu operación puede ser el Número de operación del comprobante de pago si es de un mismo banco. Si es interbancaria, la constancia será el mismo voucher que puede ser la constancia física (papel recibido después de hacer el depósito) o virtual (enviada por mail al momento de hacer la transferencia). 
+            </p>
+
+        </div>
+    </div>
+
+
+<h3>Pagar con transferencia</h3>
+
+
+    <div class="bokez-block bokez-accordion bokez-accordion-" style="text-align:;">
+                <div data-id="0" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 Sobre las tarifas interbancarias 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                EasyChange no se responsabiliza de los costos interbancarios por las transferencias realizadas. Estos se detallarán automáticamente al momento de realizar la transacción y deberán ser asumidos por el usuario. 
+            </p>
+
+        </div>        <div data-id="1" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 Sobre el tiempo estimado de los bancos 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                 El tiempo estimado que demora la transferencia está sujeto al tiempo que demoren en llegar los fondos transferidos a las cuentas de EasyChange. Nosotros no tenemos ningún control sobre el tiempo que pueda llegar a demorar la transferencia de los fondos. EasyChange no realizará ninguna transacción sin antes haber recibido los fondos por parte del cliente. Por lo general, el tiempo total para completar la transacción no debería ser mayor a dos días hábiles. 
+            </p>
+
+        </div>        <div data-id="2" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 Sobre la validación del depósito 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                La validación del depósito se dará cuando recibamos en nuestras cuentas el dinero y lo validemos con el voucher de la operación. Una vez confirmada la operación en nuestras cuentas recibirás una confirmación vía mail y en nuestro portal web. El proceso de validación demora como máximo un día hábil. 
+            </p>
+
+        </div>
+    </div>
+
+
+<h3>Tipo de Cambio</h3>
+
+
+    <div class="bokez-block bokez-accordion bokez-accordion-" style="text-align:;">
+                <div data-id="0" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Qué es el tipo de cambio garantizado? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                El tipo de cambio cerrado al momento de pactar la operación define el monto que el cliente recibe después de validar la operación. Este tipo de cambio está garantizado por un tiempo de 30 minutos luego de colocada la orden de compra, tiempo durante el cual el usuario deberá realizar la transferencia a las cuentas de EasyChange y enviar el comprobante. 
+            </p>
+
+        </div>        <div data-id="1" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cuál es el mejor momento para la compra-venta de dólares? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                En EasyChange contamos con alertas de tipo de cambio que te notificarán cuál es el mejor momento para la compra-venta de dólares. Cada cliente podrá personalizar estas alertas a su gusto. 
+            </p>
+
+        </div>        <div data-id="2" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo recibir notificaciones del tipo de cambio? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Al crearte una cuenta en EasyChange y realizar tu primera operación, tendrás acceso a noticias y recomendaciones de expertos sobre el tipo de cambio. Adicionalmente, serás informado si el tipo de cambio llega a niveles de compra o venta que establezcas. 
+            </p>
+
+        </div>
+    </div>
+
+
+<h3>Verificación</h3>
+
+
+    <div class="bokez-block bokez-accordion bokez-accordion-" style="text-align:;">
+                <div data-id="0" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 Verificación de tu identidad persona o negocio 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Para asegurar la seguridad de las transacciones realizadas en la plataforma, se realizará una validación de los datos ingresados al crear tu cuenta previo a que puedas realizar operaciones en EasyChange.com. Para esta validación, podríamos requerir información adicional que será solicitada en el momento oportuno. 
+            </p>
+
+        </div>        <div data-id="1" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo realiza EasyChange el pago? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                 El pago se realizará por transferencias por internet desde una cuenta bancaria o depósitos en oficina. Bajo ninguna circunstancia EasyChange realizará operaciones con efectivo. 
+            </p>
+
+        </div>
+    </div>
+
+
+<h3> Técnicas</h3>
+
+
+    <div class="bokez-block bokez-accordion bokez-accordion-" style="text-align:;">
+                <div data-id="0" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo subir mi comprobante? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Al realizar tu orden de compra, se te solicitará enviar el comprobante de la transacción de fondos realizada. Para hacer esto, adjunta el screenshot del voucher de la transacción en la ventana de confirmación de la orden de compra o también puedes enviarnos el comprobante de pago a <a href="/cdn-cgi/l/email-protection#32515d5c465351465d7259535f505b4146531c515d5f"><span class="__cf_email__" data-cfemail="4b2824253f2a283f240b202a262922383f2a65282426">[email&#160;protected]</span></a> y en el Asunto colocar el número de la operación. 
+            </p>
+
+        </div>        <div data-id="1" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Problemas con el Navegador? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Para garantizar el óptimo funcionamiento de EasyChange.com, se recomienda contar la última versión del navegador de tu preferencia. Si aún así tienes problemas de navegación, te recomendamos eliminar la caché y las cookies del navegador. De persistir los problemas, te sugerimos contactarte con nosotros para evaluar la situación. 
+            </p>
+
+        </div>        <div data-id="2" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo eliminar tu caché? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                <strong>En Chrome</strong>:<br>1. En la barra de herramientas de tu navegador, haz clic en Más.<br>2. Coloca el cursor sobre la opción Más herramientas y, a continuación, haz clic en Borrar datos de navegación. <br>3. En el cuadro “Borrar datos de navegación”, haz clic en las casillas de verificación de las opciones Imágenes y archivos almacenados en caché y Cookies y otros datos de sitios y complementos. Usa el menú en la parte superior para seleccionar la cantidad de datos que deseas borrar. <br>4. Selecciona el origen de los tiempos para borrar todo. <br>5. Haz clic en Borrar datos de navegación. <br><br><strong>En Mozilla Firefox: </strong><br>1. Haz clic en el botón de menú, elige la opción Historial y, por último, Limpiar el historial reciente. <br>2. Establece el Intervalo de tiempo a borrar a Todo. <br>3. Haz clic en la flecha que está al lado de Detalles para expandir la lista de elementos del historial. <br>4. Selecciona Cookies y asegúrate de que no estén seleccionados otros elementos que desees mantener. <br><br><strong>En Internet Explorer:</strong><br>1. En Internet Explorer, selecciona el botón Herramientas , ve a Seguridad y selecciona Eliminar el historial de exploración. <br>2. Activa la casilla Cookies y datos del sitio web y selecciona Eliminar
+            </p>
+
+        </div>        <div data-id="3" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 ¿Cómo navegar de manera incógnita? 
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                 Para navegar de manera incógnita en <a href="http://Kambista.com">EasyChange.com</a> deberás activar el modo de navegación incógnita dentro de tu navegador de preferencia. Sin embargo, para poder realizar operaciones dentro de EasyChange.com deberás haber ingresado con tus datos de usuario. 
+            </p>
+
+        </div>
+    </div>
+
+
+<h3 id="legal-pagina-tc">Legal</h3>
+
+
+    <div class="bokez-block bokez-accordion bokez-accordion-" style="text-align:;">
+                <div data-id="0" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                Términos y condiciones
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Revisa nuestros T&amp;C <a href="https://storage.googleapis.com/kambista-vouchers/Ty%20C%20Final.pdf">aquí.</a>
+            </p>
+
+        </div>        <div data-id="1" class="bokez-block bokez-accordion-item" >
+
+            <span style="background-color:; color:;" class="_item_header_bokez">
+                 Políticas de privacidad
+            </span>
+
+            <p class="_item_body_bokez" style="background-color: ; color:;">
+                Conoce nuestra política de privacidad <a href="https://storage.googleapis.com/kambista-vouchers/Poli%CC%81tica%20de%20privacidad.pdf">aquí. </a>
+            </p>
+
+        </div>
+    </div>
+
+        <style>
+        
+        #bokez-1572028402110.bokez-row{
+            background-color: transparent;
+            padding-top: 0.4em;
+            padding-bottom: 0.4em;
+            margin-top: 0em;
+            margin-bottom: 0em;
+            color: #202020;
+        }
+
+        #bokez-1572028402110.bokez-row a{
+            color: blue;
+        }
+
+        #bokez-1572028402110.bokez-row a:hover{
+            color: darkblue;
+        }
+
+    </style>
+        <div id="bokez-1572028402110" class="bokez-row bokez-row-gutter-30 bokez-row-mobile-equal bokez-row-tablet-equal bokez-row-desktop-equal bokez-row-mobile-3 bokez-row-tablet-3 bokez-row-desktop-3">
+            <div class="bokez-row-container">
+        <div  style='padding-top:0px; margin-top:0px; padding-bottom:0px; margin-bottom:0px;' class="bokez-column bokez-column-1">
+            <div class="bokez-column-inner">
+
+<p></p>
+
+</div>
+        </div>
+
+        <div  style='padding-top:0px; margin-top:0px; padding-bottom:0px; margin-bottom:0px;' class="bokez-column bokez-column-2">
+            <div class="bokez-column-inner"></div>
+        </div>
+
+        <div  style='padding-top:0px; margin-top:0px; padding-bottom:0px; margin-bottom:0px;' class="bokez-column bokez-column-3">
+            <div class="bokez-column-inner"></div>
+        </div>
+</div>
+        </div>
+
+
+<p></p>
+      	</div>
+
+
+      </section>
+    <style type="text/css">
+	.bokez-accordion.bokez-accordion-right .bokez-accordion-item ._item_header_bokez:after {
+	right: auto;
+	left: 0
+}
+
+.bokez-accordion-item {
+	position: relative;
+	margin-bottom: 10px
+}
+
+.bokez-accordion-item ._item_header_bokez {
+	color: #00e9cc;
+    font-weight: 400;
+    font-size: 16px;
+    display: block;
+    padding: 1rem .7rem;
+    font-size: 1.2em;
+    background-color: #fff;
+    color: #010100;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid #e2e2e2;
+    
+    padding-right: 60px;
+}
+
+.bokez-accordion-item ._item_header_bokez:after {
+	color: #00e9cc;
+	content: '+';
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	-webkit-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	font-size: 1.5em;
+	padding: 0 1em;
+	cursor: pointer;
+}
+
+.bokez-accordion-item ._item_body_bokez {
+	    margin: 0;
+    padding: 1rem .7rem;
+    font-size: 1em;
+    display: none;
+    border: 1px solid #e2e2e2;
+}
+
+.bokez-accordion-item._active_bokez ._item_body_bokez {
+	display: block
+}
+.bokez-accordion-item ._item_header_bokez:hover{
+	background-color: rgba(0,0,0,.2);
+
+}
+.bokez-accordion-item ._item_header_bokez:hover._item_header_bokez{
+	color: #fff;
+
+}
+.bokez-accordion-item._active_bokez ._item_header_bokez{
+	background-color: #060f26;
+	border-bottom: 1px solid #fff;
+	color: #fff;
+	font-weight: 600;
+}
+.bokez-accordion-item._active_bokez ._item_header_bokez:after {
+	content: '-';
+	color: #fff;
+}
+
+.bokez-accordion-item:last-child {
+	margin-bottom: 0
+}
+</style>
+<!-- Archivo de barra lateral por defecto -->
+<aside>
+  <!-- Zona de Widgets -->
+  </aside><!-- Archivo de pié global de Wordpress -->
+	
+			<a id="menuact"> <img width="42px" style="margin-top: -35px;" src="https://kambista.com/wp-content/themes/Kambista/images/Asset 258.svg"></a>
+    
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="6987f059a78b9c0a9e0227dd-text/javascript">
+		var urlwo = 'https://kambista.com/wp-admin/admin-ajax.php';
+		var urltemplate = 'https://kambista.com/wp-content/themes/Kambista';
+	</script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" type="6987f059a78b9c0a9e0227dd-text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" type="6987f059a78b9c0a9e0227dd-text/javascript"></script>
+    <script src="https://kambista.com/wp-content/themes/Kambista/js/script.js" type="6987f059a78b9c0a9e0227dd-text/javascript"></script>
+    
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.css" integrity="sha256-i0KDsIhbwcVgJz9I+HmresG9y1LHTjFBahxDTUvN378=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.js" integrity="sha256-nrAJci8pIylo3gTqwJUa76VfgJmNmHdSUFhTcawHe+0=" crossorigin="anonymous" type="6987f059a78b9c0a9e0227dd-text/javascript"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" type="6987f059a78b9c0a9e0227dd-text/javascript"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous" type="6987f059a78b9c0a9e0227dd-text/javascript"></script>
+	<script type="6987f059a78b9c0a9e0227dd-text/javascript" src="https://kambista.com/wp-content/themes/Kambista/js/ajax.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/4.0.6/sweetalert2.min.js" type="6987f059a78b9c0a9e0227dd-text/javascript"></script>
+	
+<!--BEGIN: TRACKING CODE MANAGER BY INTELLYWP.COM IN BODY//-->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P95L75Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!--END: https://wordpress.org/plugins/tracking-code-manager IN BODY//--><!-- Start of Zendesk Widget script -->
+<script type="6987f059a78b9c0a9e0227dd-text/javascript">/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","kambistahelp.zendesk.com");/*]]>*/</script>
+<!-- End of Zendesk Widget script -->
+<script type="6987f059a78b9c0a9e0227dd-text/javascript" src='https://kambista.com/wp-content/plugins/bokez-awesome-gutenberg-blocks/dist/frontend.build.js?ver=2.1.3'></script>
+<script type="6987f059a78b9c0a9e0227dd-text/javascript" src='https://kambista.com/wp-includes/js/wp-embed.min.js?ver=5.2.5'></script>
+	<script type="6987f059a78b9c0a9e0227dd-text/javascript">
+	$(document).ready(function(){
+	$( "#plusporque" ).click(function() {
+		if ($(this).attr("apt")) {
+			if ($(this).attr("apt")==1) {
+				$(this).attr('apt', '0');
+          		$(".subtextoporque").css("display", "none");
+          		$(this).attr('src', urltemplate +'/images/plus.svg');
+			}else{
+				$(this).attr('apt', '1');
+          		$(".subtextoporque").css("display", "block");
+          		$(this).attr('src', urltemplate +'/images/dis.svg');
+			}
+		}else{
+			$(this).attr('apt', '1');
+          	$(".subtextoporque").css("display", "block");
+          	$(this).attr('src', urltemplate +'/images/dis.svg');
+		}
+    });
+});
+</script>
+
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="6987f059a78b9c0a9e0227dd-|49" defer=""></script></html>
+{% endblock %}

@@ -1,0 +1,584 @@
+{% extends 'dashboard/layout.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+
+<!--[if IE 8]>
+<html id="ie8" lang="es-PE">
+<![endif]-->
+<!--[if !(IE 8) ]><!-->
+<html lang="es-PE">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://blog.kambista.com/xmlrpc.php" />
+<title>EasyChange Blog</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Kambista Blog &raquo; Feed" href="https://blog.kambista.com/feed/" />
+
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://blog.kambista.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='https://blog.kambista.com/wp-content/themes/nisarg/css/bootstrap.css?ver=5.2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://blog.kambista.com/wp-content/themes/nisarg/font-awesome/css/font-awesome.min.css?ver=5.2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='nisarg-style-css'  href='https://blog.kambista.com/wp-content/themes/nisarg/style.css?ver=5.2.5' type='text/css' media='all' />
+<style id='nisarg-style-inline-css' type='text/css'>
+	/* Color Scheme */
+
+	/* Accent Color */
+
+	a:active,
+	a:hover,
+	a:focus {
+	    color: #009688;
+	}
+
+	.main-navigation .primary-menu > li > a:hover, .main-navigation .primary-menu > li > a:focus {
+		color: #009688;
+	}
+	
+	.main-navigation .primary-menu .sub-menu .current_page_item > a,
+	.main-navigation .primary-menu .sub-menu .current-menu-item > a {
+		color: #009688;
+	}
+	.main-navigation .primary-menu .sub-menu .current_page_item > a:hover,
+	.main-navigation .primary-menu .sub-menu .current_page_item > a:focus,
+	.main-navigation .primary-menu .sub-menu .current-menu-item > a:hover,
+	.main-navigation .primary-menu .sub-menu .current-menu-item > a:focus {
+		background-color: #fff;
+		color: #009688;
+	}
+	.dropdown-toggle:hover,
+	.dropdown-toggle:focus {
+		color: #009688;
+	}
+
+	@media (min-width: 768px){
+		.main-navigation .primary-menu > .current_page_item > a,
+		.main-navigation .primary-menu > .current_page_item > a:hover,
+		.main-navigation .primary-menu > .current_page_item > a:focus,
+		.main-navigation .primary-menu > .current-menu-item > a,
+		.main-navigation .primary-menu > .current-menu-item > a:hover,
+		.main-navigation .primary-menu > .current-menu-item > a:focus,
+		.main-navigation .primary-menu > .current_page_ancestor > a,
+		.main-navigation .primary-menu > .current_page_ancestor > a:hover,
+		.main-navigation .primary-menu > .current_page_ancestor > a:focus,
+		.main-navigation .primary-menu > .current-menu-ancestor > a,
+		.main-navigation .primary-menu > .current-menu-ancestor > a:hover,
+		.main-navigation .primary-menu > .current-menu-ancestor > a:focus {
+			border-top: 4px solid #009688;
+		}
+		.main-navigation ul ul a:hover,
+		.main-navigation ul ul a.focus {
+			color: #fff;
+			background-color: #009688;
+		}
+	}
+
+	.main-navigation .primary-menu > .open > a, .main-navigation .primary-menu > .open > a:hover, .main-navigation .primary-menu > .open > a:focus {
+		color: #009688;
+	}
+
+	.main-navigation .primary-menu > li > .sub-menu  li > a:hover,
+	.main-navigation .primary-menu > li > .sub-menu  li > a:focus {
+		color: #fff;
+		background-color: #009688;
+	}
+
+	@media (max-width: 767px) {
+		.main-navigation .primary-menu .open .sub-menu > li > a:hover {
+			color: #fff;
+			background-color: #009688;
+		}
+	}
+
+	.sticky-post{
+	    background: #009688;
+	    color:white;
+	}
+	
+	.entry-title a:hover,
+	.entry-title a:focus{
+	    color: #009688;
+	}
+
+	.entry-header .entry-meta::after{
+	    background: #009688;
+	}
+
+	.fa {
+		color: #009688;
+	}
+
+	.btn-default{
+		border-bottom: 1px solid #009688;
+	}
+
+	.btn-default:hover, .btn-default:focus{
+	    border-bottom: 1px solid #009688;
+	    background-color: #009688;
+	}
+
+	.nav-previous:hover, .nav-next:hover{
+	    border: 1px solid #009688;
+	    background-color: #009688;
+	}
+
+	.next-post a:hover,.prev-post a:hover{
+	    color: #009688;
+	}
+
+	.posts-navigation .next-post a:hover .fa, .posts-navigation .prev-post a:hover .fa{
+	    color: #009688;
+	}
+
+
+	#secondary .widget-title::after{
+		background-color: #009688;
+	    content: "";
+	    position: absolute;
+	    width: 50px;
+	    display: block;
+	    height: 4px;    
+	    bottom: -15px;
+	}
+
+	#secondary .widget a:hover,
+	#secondary .widget a:focus{
+		color: #009688;
+	}
+
+	#secondary .widget_calendar tbody a {
+	    background-color: #009688;
+	    color: #fff;
+	    padding: 0.2em;
+	}
+
+	#secondary .widget_calendar tbody a:hover{
+	    background-color: #009688;
+	    color: #fff;
+	    padding: 0.2em;
+	}	
+
+</style>
+<link rel='stylesheet' id='nisarggooglefonts-css'  href='//fonts.googleapis.com/css?family=Lato:400,300italic,700|Source+Sans+Pro:400,400italic' type='text/css' media='all' />
+<script type="24e9d07881725b2cb70c3745-text/javascript" src='https://blog.kambista.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type="24e9d07881725b2cb70c3745-text/javascript" src='https://blog.kambista.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://blog.kambista.com/wp-content/themes/nisarg/js/html5shiv.js?ver=3.7.3'></script>
+<![endif]-->
+<link rel='https://api.w.org/' href='https://blog.kambista.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.kambista.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.kambista.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.2.5" />
+
+<style type="text/css">
+        .site-header { background: ; }
+</style>
+
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+<body class="home blog group-blog">
+<div id="page" class="hfeed site">
+
+<div id="content" class="site-content">
+
+	<div class="container">
+		<div class="row">
+			<div id="primary" class="col-md-9 content-area">
+				<main id="main" class="site-main" role="main">
+									
+																
+<article id="post-407"  class="post-content post-407 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized tag-entrevista">
+
+	
+	        <div class="featured-image">
+        	        	<a href="https://blog.kambista.com/2019/06/25/lecciones-del-camino-al-emprendimiento/" rel="bookmark">
+            <img width="1000" height="530" src="https://blog.kambista.com/wp-content/uploads/2019/06/COVER-BLOG-IGTV.png" class="attachment-nisarg-full-width size-nisarg-full-width wp-post-image" alt="" srcset="https://blog.kambista.com/wp-content/uploads/2019/06/COVER-BLOG-IGTV.png 1000w, https://blog.kambista.com/wp-content/uploads/2019/06/COVER-BLOG-IGTV-300x159.png 300w, https://blog.kambista.com/wp-content/uploads/2019/06/COVER-BLOG-IGTV-768x407.png 768w, https://blog.kambista.com/wp-content/uploads/2019/06/COVER-BLOG-IGTV-509x270.png 509w" sizes="(max-width: 1000px) 100vw, 1000px" />                        </a>         
+        </div>
+        
+	<header class="entry-header">
+
+		<span class="screen-reader-text">Lecciones del Camino al Emprendimiento</span>
+
+					<h2 class="entry-title">
+				<a href="https://blog.kambista.com/2019/06/25/lecciones-del-camino-al-emprendimiento/" rel="bookmark">Lecciones del Camino al Emprendimiento</a>
+			</h2>
+		
+				<div class="entry-meta">
+			<h5 class="entry-date"><i class="fa fa-calendar-o"></i> <a href="https://blog.kambista.com/2019/06/25/lecciones-del-camino-al-emprendimiento/" title="12:05 pm" rel="bookmark"><time class="entry-date" datetime="2019-06-25T12:05:09-05:00" pubdate>Junio 25, 2019 </time></a><span class="byline"><span class="sep"></span><i class="fa fa-user"></i>
+<span class="author vcard"><a class="url fn n" href="https://blog.kambista.com/author/admin/" title="View all posts by admin" rel="author">admin</a></span></span> <i class="fa fa-comments-o"></i><span class="screen-reader-text">Comments </span> <a href="https://blog.kambista.com/2019/06/25/lecciones-del-camino-al-emprendimiento/#respond" class="comments-link" >0 Comment</a></h5>
+		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<p>¡Emprender un negocio no es tarea fácil, pero el aprendizaje continuo es parte del trayecto! Compartimos con ustedes algunas lecciones aprendidas por nuestros fundadores Paulo y Daniel. La entrevista original está en videos en nuestro Instagram TV, si te gustaría verlos entra aquí: https://www.instagram.com/kambistaperu/channel/ Paulo, cofundador de Kambista, nos cuenta que siempre quizo tener su propia empresa. Desde épocas de colegio, cuando pensaba en que estudiar, sabia que quería ser independiente y tener su propio negocio. A los 26 años,&#8230;</p>
+<p class="read-more"><a class="btn btn-default" href="https://blog.kambista.com/2019/06/25/lecciones-del-camino-al-emprendimiento/"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+	</div><!-- .entry-summary -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+											
+<article id="post-399"  class="post-content post-399 post type-post status-publish format-standard hentry">
+
+	
+	
+	<header class="entry-header">
+
+		<span class="screen-reader-text">Consejos para mejorar tu productividad en el trabajo</span>
+
+					<h2 class="entry-title">
+				<a href="https://blog.kambista.com/2019/03/13/consejos-para-mejorar-tu-productividad-en-el-trabajo/" rel="bookmark">Consejos para mejorar tu productividad en el trabajo</a>
+			</h2>
+		
+				<div class="entry-meta">
+			<h5 class="entry-date"><i class="fa fa-calendar-o"></i> <a href="https://blog.kambista.com/2019/03/13/consejos-para-mejorar-tu-productividad-en-el-trabajo/" title="9:04 pm" rel="bookmark"><time class="entry-date" datetime="2019-03-13T21:04:44-05:00" pubdate>Marzo 13, 2019 </time></a><span class="byline"><span class="sep"></span><i class="fa fa-user"></i>
+<span class="author vcard"><a class="url fn n" href="https://blog.kambista.com/author/" title="View all posts by " rel="author"></a></span></span></h5>
+		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<p>Fuente: La República https://larepublica.pe/economia/1429934-consejos-mejorar-productividad-trabajo Consejos para mejorar tu productividad en el trabajo Sigue estas recomendaciones para ahorrar tiempo y rendir mejor en tu centro de labores. Redacción: La República 13 Mar 2019 | 15:25 h &nbsp; Si estás buscando ahorrar tiempo y rendir en tu empleo y no sabes cómo, sigue estos consejos para organizarte mejor en tu centro de labores y lograr ser más eficiente. Enfócate en lo más importante. Para Paulo Valdiviezo, de Kambista, es más productivo enfocarse en lo esencial, que pueden ser pocas tareas y no obligarse&#8230;</p>
+<p class="read-more"><a class="btn btn-default" href="https://blog.kambista.com/2019/03/13/consejos-para-mejorar-tu-productividad-en-el-trabajo/"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+	</div><!-- .entry-summary -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+											
+<article id="post-395"  class="post-content post-395 post type-post status-publish format-standard hentry">
+
+	
+	
+	<header class="entry-header">
+
+		<span class="screen-reader-text">Kambista y Urbania &#8211; Aliados estratégicos</span>
+
+					<h2 class="entry-title">
+				<a href="https://blog.kambista.com/2019/03/06/kambista-y-urbania-aliados-estrategicos/" rel="bookmark">Kambista y Urbania &#8211; Aliados estratégicos</a>
+			</h2>
+		
+				<div class="entry-meta">
+			<h5 class="entry-date"><i class="fa fa-calendar-o"></i> <a href="https://blog.kambista.com/2019/03/06/kambista-y-urbania-aliados-estrategicos/" title="8:29 pm" rel="bookmark"><time class="entry-date" datetime="2019-03-06T20:29:17-05:00" pubdate>Marzo 6, 2019 </time></a><span class="byline"><span class="sep"></span><i class="fa fa-user"></i>
+<span class="author vcard"><a class="url fn n" href="https://blog.kambista.com/author/" title="View all posts by " rel="author"></a></span></span></h5>
+		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<p>Créditos www.andina.pe  &#8211; Noticia: https://andina.pe/agencia/noticia-jesus-maria-san-miguel-y-magdalena-son-los-distritos-preferidos-para-vivir-744507.aspx Jesús María, San Miguel y Magdalena son los distritos preferidos para vivir En la última edición de la ExpoUrbania estos tres distritos captaron el 40% del total de separaciones registradas Jesús María. ANDINA/Difusión 13:36 | Lima, mar. 6.       Los distritos de Jesús María, San Miguel y Magdalena son los preferidos por los limeños para adquirir un inmueble, según los resultados obtenidos de la última edición del ExpoUrbania, realizada a fines del año pasado. Estas tres comunas&#8230;</p>
+<p class="read-more"><a class="btn btn-default" href="https://blog.kambista.com/2019/03/06/kambista-y-urbania-aliados-estrategicos/"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+	</div><!-- .entry-summary -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+											
+<article id="post-389"  class="post-content post-389 post type-post status-publish format-standard hentry">
+
+	
+	
+	<header class="entry-header">
+
+		<span class="screen-reader-text">Métodos de seguridad que deberías tomar al convertir soles a dólares online</span>
+
+					<h2 class="entry-title">
+				<a href="https://blog.kambista.com/2019/02/21/seguridad-al-convertir-soles-a-dolares/" rel="bookmark">Métodos de seguridad que deberías tomar al convertir soles a dólares online</a>
+			</h2>
+		
+				<div class="entry-meta">
+			<h5 class="entry-date"><i class="fa fa-calendar-o"></i> <a href="https://blog.kambista.com/2019/02/21/seguridad-al-convertir-soles-a-dolares/" title="2:30 pm" rel="bookmark"><time class="entry-date" datetime="2019-02-21T14:30:50-05:00" pubdate>Febrero 21, 2019 </time></a><span class="byline"><span class="sep"></span><i class="fa fa-user"></i>
+<span class="author vcard"><a class="url fn n" href="https://blog.kambista.com/author/" title="View all posts by " rel="author"></a></span></span></h5>
+		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<p>Te ayudamos a mantener cambios seguros de divisas con estos consejos   Convertir de soles a dólares online es una alternativa rápida para conseguir el cambio de moneda a buen precio, pero ¿son todas las casas de cambio online seguras? ¿Cómo saber qué se está cambiando dinero en una plataforma confiable? Así como hay medidas de seguridad que se toman al cambiar dinero en bancos, cajas e incluso prestamistas informales, también hay métodos de seguridad al convertir de soles a dólares&#8230;</p>
+<p class="read-more"><a class="btn btn-default" href="https://blog.kambista.com/2019/02/21/seguridad-al-convertir-soles-a-dolares/"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+	</div><!-- .entry-summary -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+											
+<article id="post-392"  class="post-content post-392 post type-post status-publish format-standard hentry">
+
+	
+	
+	<header class="entry-header">
+
+		<span class="screen-reader-text">Mitos sobre cómo obtener dinero para una Startup</span>
+
+					<h2 class="entry-title">
+				<a href="https://blog.kambista.com/2019/02/20/mitos-sobre-como-obtener-dinero-para-una-startup/" rel="bookmark">Mitos sobre cómo obtener dinero para una Startup</a>
+			</h2>
+		
+				<div class="entry-meta">
+			<h5 class="entry-date"><i class="fa fa-calendar-o"></i> <a href="https://blog.kambista.com/2019/02/20/mitos-sobre-como-obtener-dinero-para-una-startup/" title="5:16 pm" rel="bookmark"><time class="entry-date" datetime="2019-02-20T17:16:41-05:00" pubdate>Febrero 20, 2019 </time></a><span class="byline"><span class="sep"></span><i class="fa fa-user"></i>
+<span class="author vcard"><a class="url fn n" href="https://blog.kambista.com/author/" title="View all posts by " rel="author"></a></span></span></h5>
+		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<p>Tener una buena idea es lo más fácil al momento de comenzar un proyecto de negocio; mientras que, conseguir el capital necesario para convertirlo en una historia de éxito es más complicado. Kambista, la primera casa de cambio digital peruana, que en el 2018 alcanzó los 130 millones de dólares en transacciones y un crecimiento en ingresos de más de 1000% con respecto al año 2017, hace dos años recién iniciaba operaciones en el mercado. En ese sentido, a continuación,&#8230;</p>
+<p class="read-more"><a class="btn btn-default" href="https://blog.kambista.com/2019/02/20/mitos-sobre-como-obtener-dinero-para-una-startup/"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+	</div><!-- .entry-summary -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+											
+<article id="post-386"  class="post-content post-386 post type-post status-publish format-standard hentry">
+
+	
+	
+	<header class="entry-header">
+
+		<span class="screen-reader-text">Te explicamos todas las opciones para el cambio de divisas en Perú</span>
+
+					<h2 class="entry-title">
+				<a href="https://blog.kambista.com/2019/02/18/opciones-para-cambio-de-divisas-peru/" rel="bookmark">Te explicamos todas las opciones para el cambio de divisas en Perú</a>
+			</h2>
+		
+				<div class="entry-meta">
+			<h5 class="entry-date"><i class="fa fa-calendar-o"></i> <a href="https://blog.kambista.com/2019/02/18/opciones-para-cambio-de-divisas-peru/" title="3:20 pm" rel="bookmark"><time class="entry-date" datetime="2019-02-18T15:20:11-05:00" pubdate>Febrero 18, 2019 </time></a><span class="byline"><span class="sep"></span><i class="fa fa-user"></i>
+<span class="author vcard"><a class="url fn n" href="https://blog.kambista.com/author/" title="View all posts by " rel="author"></a></span></span></h5>
+		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<p>Entre todas las formas de comprar y vender dólares en Perú, cada una tiene su particularidad Cuando se busca el cambio de divisas en Perú existen diferentes opciones para realizar este tipo de transacción. Pero ¿dónde es más conveniente cambiar dólares por soles o viceversa? Y es que no sólo hay que tener en cuenta el costo del tipo de cambio, sino también la seguridad del proceso. Aquí las opciones que hay disponibles para el cambio de divisas en Perú&#8230;</p>
+<p class="read-more"><a class="btn btn-default" href="https://blog.kambista.com/2019/02/18/opciones-para-cambio-de-divisas-peru/"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+	</div><!-- .entry-summary -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+											
+<article id="post-382"  class="post-content post-382 post type-post status-publish format-standard hentry">
+
+	
+	
+	<header class="entry-header">
+
+		<span class="screen-reader-text">¿Cómo se compara el precio del dólar en Perú con el precio de las monedas de otros países?</span>
+
+					<h2 class="entry-title">
+				<a href="https://blog.kambista.com/2019/02/15/como-se-compara-el-precio-del-dolar-en-peru-con-el-precio-de-las-monedas-de-otros-paises/" rel="bookmark">¿Cómo se compara el precio del dólar en Perú con el precio de las monedas de otros países?</a>
+			</h2>
+		
+				<div class="entry-meta">
+			<h5 class="entry-date"><i class="fa fa-calendar-o"></i> <a href="https://blog.kambista.com/2019/02/15/como-se-compara-el-precio-del-dolar-en-peru-con-el-precio-de-las-monedas-de-otros-paises/" title="1:30 pm" rel="bookmark"><time class="entry-date" datetime="2019-02-15T13:30:10-05:00" pubdate>Febrero 15, 2019 </time></a><span class="byline"><span class="sep"></span><i class="fa fa-user"></i>
+<span class="author vcard"><a class="url fn n" href="https://blog.kambista.com/author/" title="View all posts by " rel="author"></a></span></span></h5>
+		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<p>La variación del precio del dólar en Perú afecta positiva o negativamente nuestra economía, según se trate de la baja o el alza de la divisa estadounidense. Esto no solo sucede en el país ya que otros estados latinoamericanos también se encuentran estrechamente ligados al costo del dólar. El valor de la divisa norteamericana ha tendido al alza; y de hecho ha sufrido la apreciación más importante en los últimos años (el 4%). Uno de los factores es el aumento&#8230;</p>
+<p class="read-more"><a class="btn btn-default" href="https://blog.kambista.com/2019/02/15/como-se-compara-el-precio-del-dolar-en-peru-con-el-precio-de-las-monedas-de-otros-paises/"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+	</div><!-- .entry-summary -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+											
+<article id="post-380"  class="post-content post-380 post type-post status-publish format-standard hentry">
+
+	
+	
+	<header class="entry-header">
+
+		<span class="screen-reader-text">¿Cómo afecta a los peruanos el alza o caída del dólar?</span>
+
+					<h2 class="entry-title">
+				<a href="https://blog.kambista.com/2019/02/13/como-afecta-a-los-peruanos-el-alza-o-caida-del-dolar/" rel="bookmark">¿Cómo afecta a los peruanos el alza o caída del dólar?</a>
+			</h2>
+		
+				<div class="entry-meta">
+			<h5 class="entry-date"><i class="fa fa-calendar-o"></i> <a href="https://blog.kambista.com/2019/02/13/como-afecta-a-los-peruanos-el-alza-o-caida-del-dolar/" title="1:30 pm" rel="bookmark"><time class="entry-date" datetime="2019-02-13T13:30:55-05:00" pubdate>Febrero 13, 2019 </time></a><span class="byline"><span class="sep"></span><i class="fa fa-user"></i>
+<span class="author vcard"><a class="url fn n" href="https://blog.kambista.com/author/" title="View all posts by " rel="author"></a></span></span></h5>
+		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<p>La compra y venta del dólar es un tema que se discute e interesa no sólo a quienes están inmersos en la banca, sino a todos los que movemos dinero a diario. Y es que el alza del dólar puede afectar la economía del país y nuestras cuentas. Pero, qué tanto puede ser el efecto que tenga el alza o la caída de esta moneda y qué se espera del cambio del dólar en Perú. ¿Subirá la compra y venta&#8230;</p>
+<p class="read-more"><a class="btn btn-default" href="https://blog.kambista.com/2019/02/13/como-afecta-a-los-peruanos-el-alza-o-caida-del-dolar/"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+	</div><!-- .entry-summary -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+											
+<article id="post-378"  class="post-content post-378 post type-post status-publish format-standard hentry">
+
+	
+	
+	<header class="entry-header">
+
+		<span class="screen-reader-text">Descubre cuándo conviene convertir dólares a soles peruanos</span>
+
+					<h2 class="entry-title">
+				<a href="https://blog.kambista.com/2019/02/11/descubre-cuando-conviene-convertir-dolares-a-soles-peruanos/" rel="bookmark">Descubre cuándo conviene convertir dólares a soles peruanos</a>
+			</h2>
+		
+				<div class="entry-meta">
+			<h5 class="entry-date"><i class="fa fa-calendar-o"></i> <a href="https://blog.kambista.com/2019/02/11/descubre-cuando-conviene-convertir-dolares-a-soles-peruanos/" title="1:30 pm" rel="bookmark"><time class="entry-date" datetime="2019-02-11T13:30:36-05:00" pubdate>Febrero 11, 2019 </time></a><span class="byline"><span class="sep"></span><i class="fa fa-user"></i>
+<span class="author vcard"><a class="url fn n" href="https://blog.kambista.com/author/" title="View all posts by " rel="author"></a></span></span></h5>
+		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<p>Convertir dólares a soles peruanos es prácticamente una ciencia. Y es que hay que saber aprovechar los momentos para sacarle provecho al tipo de cambio del día y ganar más en cada transacción. También vale tener en cuenta el cambio en las divisas cuando se tienen deudas bancarias. A veces es necesario convertir dólares a soles peruanos cuando se tiene una deuda en moneda extranjera, entendiendo que el precio de esta sube y el sueldo se percibe en divisa nacional&#8230;.</p>
+<p class="read-more"><a class="btn btn-default" href="https://blog.kambista.com/2019/02/11/descubre-cuando-conviene-convertir-dolares-a-soles-peruanos/"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+	</div><!-- .entry-summary -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+											
+<article id="post-376"  class="post-content post-376 post type-post status-publish format-standard hentry">
+
+	
+	
+	<header class="entry-header">
+
+		<span class="screen-reader-text">¿Cómo podrá seguir el precio del dólar en Perú durante el 2019?</span>
+
+					<h2 class="entry-title">
+				<a href="https://blog.kambista.com/2019/02/08/como-podra-seguir-el-precio-del-dolar-en-peru-durante-el-2019/" rel="bookmark">¿Cómo podrá seguir el precio del dólar en Perú durante el 2019?</a>
+			</h2>
+		
+				<div class="entry-meta">
+			<h5 class="entry-date"><i class="fa fa-calendar-o"></i> <a href="https://blog.kambista.com/2019/02/08/como-podra-seguir-el-precio-del-dolar-en-peru-durante-el-2019/" title="10:44 pm" rel="bookmark"><time class="entry-date" datetime="2019-02-08T22:44:07-05:00" pubdate>Febrero 8, 2019 </time></a><span class="byline"><span class="sep"></span><i class="fa fa-user"></i>
+<span class="author vcard"><a class="url fn n" href="https://blog.kambista.com/author/" title="View all posts by " rel="author"></a></span></span></h5>
+		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<p>El precio actual del dólar en Perú es uno de los más altos en los últimos años. Lo que ha llevado a pensar a muchos profesionales que la tendencia al alza podría mantenerse. Después de todo, en el 2018 el dólar llegó a aumentar su valor en más de un 4%. Pero, ¿Cuán cierto es que el precio actual del dólar en Perú se mantenga? ¿Cuáles son las posibilidades de que suba o que baje? Y ¿Cuáles factores podrían influir? ¿Se mantendrá&#8230;</p>
+<p class="read-more"><a class="btn btn-default" href="https://blog.kambista.com/2019/02/08/como-podra-seguir-el-precio-del-dolar-en-peru-durante-el-2019/"> Read More<span class="screen-reader-text">  Read More</span></a></p>
+	</div><!-- .entry-summary -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+											<nav class="navigation posts-navigation" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links">
+
+			<div class="row">
+				<div class="col-md-6"><p> </p></div>			
+			
+					
+				<div class="col-md-6 prev-post">		
+				<a href="https://blog.kambista.com/page/2/" >OLDER POST<i class="fa fa-angle-double-right"></i></a>				</div>
+								</div>		
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+									</main><!-- #main -->
+			</div><!-- #primary -->
+			<div id="secondary" class="col-md-3 sidebar widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="https://blog.kambista.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h4 class="widget-title">Entradas recientes</h4>		<ul>
+											<li>
+					<a href="https://blog.kambista.com/2019/06/25/lecciones-del-camino-al-emprendimiento/">Lecciones del Camino al Emprendimiento</a>
+									</li>
+											<li>
+					<a href="https://blog.kambista.com/2019/03/13/consejos-para-mejorar-tu-productividad-en-el-trabajo/">Consejos para mejorar tu productividad en el trabajo</a>
+									</li>
+											<li>
+					<a href="https://blog.kambista.com/2019/03/06/kambista-y-urbania-aliados-estrategicos/">Kambista y Urbania &#8211; Aliados estratégicos</a>
+									</li>
+											<li>
+					<a href="https://blog.kambista.com/2019/02/21/seguridad-al-convertir-soles-a-dolares/">Métodos de seguridad que deberías tomar al convertir soles a dólares online</a>
+									</li>
+											<li>
+					<a href="https://blog.kambista.com/2019/02/20/mitos-sobre-como-obtener-dinero-para-una-startup/">Mitos sobre cómo obtener dinero para una Startup</a>
+									</li>
+					</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h4 class="widget-title">Comentarios recientes</h4><ul id="recentcomments"></ul></aside><aside id="archives-2" class="widget widget_archive"><h4 class="widget-title">Archivo</h4>		<ul>
+				<li><a href='https://blog.kambista.com/2019/06/'>Junio 2019</a></li>
+	<li><a href='https://blog.kambista.com/2019/03/'>Marzo 2019</a></li>
+	<li><a href='https://blog.kambista.com/2019/02/'>Febrero 2019</a></li>
+	<li><a href='https://blog.kambista.com/2019/01/'>Enero 2019</a></li>
+	<li><a href='https://blog.kambista.com/2018/12/'>Diciembre 2018</a></li>
+	<li><a href='https://blog.kambista.com/2018/11/'>Noviembre 2018</a></li>
+	<li><a href='https://blog.kambista.com/2018/10/'>Octubre 2018</a></li>
+	<li><a href='https://blog.kambista.com/2018/09/'>Septiembre 2018</a></li>
+	<li><a href='https://blog.kambista.com/2018/08/'>Agosto 2018</a></li>
+	<li><a href='https://blog.kambista.com/2018/07/'>Julio 2018</a></li>
+	<li><a href='https://blog.kambista.com/2018/06/'>Junio 2018</a></li>
+	<li><a href='https://blog.kambista.com/2018/05/'>Mayo 2018</a></li>
+	<li><a href='https://blog.kambista.com/2018/04/'>Abril 2018</a></li>
+	<li><a href='https://blog.kambista.com/2018/03/'>Marzo 2018</a></li>
+	<li><a href='https://blog.kambista.com/2018/02/'>Febrero 2018</a></li>
+		</ul>
+			</aside><aside id="categories-2" class="widget widget_categories"><h4 class="widget-title">Categorías</h4>		<ul>
+				<li class="cat-item cat-item-1"><a href="https://blog.kambista.com/category/uncategorized/">Uncategorized</a>
+</li>
+		</ul>
+			</aside><aside id="meta-2" class="widget widget_meta"><h4 class="widget-title">Meta</h4>			<ul>
+			<li><a href="https://blog.kambista.com/wp-login.php?action=register">Registrarse</a></li>			<li><a href="https://blog.kambista.com/wp-login.php">Iniciar sesión</a></li>
+			<li><a href="https://blog.kambista.com/feed/">Entradas <abbr title="Sindicación Realmente Simple">RSS</abbr></a></li>
+			<li><a href="https://blog.kambista.com/comments/feed/">Comentarios <abbr title="Sindicación Realmente Simple">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Gestionado con WordPress, una avanzada plataforma semántica de publicación personal.">WordPress.org</a></li>			</ul>
+			</aside></div><!-- #secondary .widget-area -->
+
+
+		</div><!--row-->
+	</div><!--.container-->
+		</div><!-- #content -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="row site-info">
+			&copy; Kambista2019 | Av. Antonio Miroquesada 360 (antiguo Juan de Aliaga) - Ofi. 803, Magdalena, Lima, Perú.			
+		</div><!-- .site-info -->
+		<!-- Google Analytics -->
+		<script type="24e9d07881725b2cb70c3745-text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-74270338-2', 'auto');
+		ga('send', 'pageview');
+		</script>
+		<!-- End Google Analytics -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+<script type="24e9d07881725b2cb70c3745-text/javascript" src='https://blog.kambista.com/wp-content/themes/nisarg/js/bootstrap.js?ver=5.2.5'></script>
+<script type="24e9d07881725b2cb70c3745-text/javascript" src='https://blog.kambista.com/wp-content/themes/nisarg/js/navigation.js?ver=5.2.5'></script>
+<script type="24e9d07881725b2cb70c3745-text/javascript" src='https://blog.kambista.com/wp-content/themes/nisarg/js/skip-link-focus-fix.js?ver=5.2.5'></script>
+<script type="24e9d07881725b2cb70c3745-text/javascript">
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type="24e9d07881725b2cb70c3745-text/javascript" src='https://blog.kambista.com/wp-content/themes/nisarg/js/nisarg.js?ver=5.2.5'></script>
+<script type="24e9d07881725b2cb70c3745-text/javascript" src='https://blog.kambista.com/wp-includes/js/wp-embed.min.js?ver=5.2.5'></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="24e9d07881725b2cb70c3745-|49" defer=""></script></body>
+</html>
+
+
+{% endblock %}

@@ -28,6 +28,7 @@ class Company(models.Model):
 	def __str__(self):
 		return self.name
 
+#for client bank account
 class Bank(models.Model):
 	name = models.CharField(max_length=50)
 
@@ -51,11 +52,11 @@ class Transaction(models.Model):
 		verbose_name = 'Transaccion'
 	#choosen (elegir de las cuentas que ingrese el usuario)
 	#receptionAccount = 
-	convert_from = models.ForeignKey(Coin, on_delete=models.CASCADE, related_name='convert_from')
-	convert_to = models.ForeignKey(Coin, on_delete=models.CASCADE, related_name='convert_to' )
-	exchange_rate_sale = models.DecimalField("Venta", max_digits=10, decimal_places=2) #3.4   |  4
-	exchange_rate_purchase = models.DecimalField("Compra", max_digits=10, decimal_places=2) #3.5   | 4.1
-	amount = models.DecimalField('Cantidad', max_digits=10, decimal_places=2)
+	coin_transform = models.ForeignKey(Coin, on_delete=models.CASCADE, related_name='coin_transform')
+	operation_type = models.CharField(max_length=10)
+	exchange_rate = models.DecimalField("Exchange", max_digits=10, decimal_places=3) #3.4   |  4
+	amount_from = models.DecimalField('Inicial', max_digits=10, decimal_places=2)
+	amount_to = models.DecimalField('Final', max_digits=10, decimal_places=2)
 	client_bank_account = models.ForeignKey(BankAccount, on_delete=models.CASCADE, related_name='client_bank_account') #for receive the money
 	company_bank_account = models.ForeignKey(BankAccount, on_delete=models.CASCADE, related_name='company_bank_account') # for sent the money
 	operation_number = models.CharField(max_length=20)
