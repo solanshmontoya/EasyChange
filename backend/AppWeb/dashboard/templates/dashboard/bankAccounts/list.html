@@ -10,31 +10,17 @@
     <thead>
         <tr>
             <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Precio </th>
-            <th>Precio Regular</th>
+            <th>Banco</th>
+            <th>Numero de Cuenta </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        {% for product in items %}
+        {% for item in items %}
         <tr>
-            <td>{{ product.name }}</td>
-            <td>{{ product.description }}</td>
-            <td>{{ product.price }}</td>
-            <td>{{ product.price_regular }}</td>
-            <td>
-                {% if perms.core.change_product %}
-                <a href="{% url 'dashboard:products_edit' product.id %}" title='Mostrar producto' data-toggle="tooltip">
-                    <i class="fas fa-info"></i>
-                </a>
-                {% endif %} |
-                {% if perms.core.delete_product %}
-                <a href="{% url 'dashboard:products_delete' product.id %}" title='Eliminar' data-toggle="tooltip" class="delete_btn">
-                    <i class="fas fa-trash-alt"></i>                        
-                </a> 
-                {% endif %}
-            </td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.bank.name }}</td>
+            <td>{{ item.number }}</td>
         </tr>
         {% endfor %}
     </tbody>

@@ -31,6 +31,8 @@ class Company(models.Model):
 #for client bank account
 class Bank(models.Model):
 	name = models.CharField(max_length=50)
+	def __str__(self):
+		return self.name
 
 #client bank account 
 class BankAccount(models.Model):
@@ -39,6 +41,8 @@ class BankAccount(models.Model):
 	bank = models.ForeignKey(Bank, on_delete=models.CASCADE)
 	number = models.CharField(max_length=100)
 	type = models.IntegerField(choices=BANK_ACCOUNT_TYPE)
+	def __str__(self):
+		return self.name
  
 class Coin(models.Model):
 	name = models.CharField(max_length=20)
