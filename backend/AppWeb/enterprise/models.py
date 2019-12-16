@@ -58,6 +58,8 @@ class Coin(models.Model):
 	exchange_rate_sale = models.DecimalField("Venta", max_digits=10, decimal_places=2) #3.4   |  4
 	exchange_rate_purchase = models.DecimalField("Compra", max_digits=10, decimal_places=2) #3.5   | 4.1
 	
+	def __str__(self):
+		return self.name	
 
 class Transaction(models.Model):
 	class Meta:
