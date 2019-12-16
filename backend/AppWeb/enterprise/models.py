@@ -51,6 +51,8 @@ class BankAccount(models.Model):
 		return self.name
  
 class Coin(models.Model):
+	class Meta:
+		verbose_name = 'Moneda'
 	name = models.CharField('Nombre', max_length=20)
 	symbol = models.CharField('Simbolo', max_length=5) # s/. $ E
 	exchange_rate_sale = models.DecimalField("Venta", max_digits=10, decimal_places=2) #3.4   |  4
