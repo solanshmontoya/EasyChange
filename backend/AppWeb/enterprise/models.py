@@ -3,8 +3,8 @@ from django.conf import settings
 from django.contrib.auth.models import User
 
 BANK_ACCOUNT_TYPE = (
-	(1, 'ahorros'),
-	(2, 'corriente'),
+	(1, 'Ahorros'),
+	(2, 'Cuenta Corriente'),
 )
 TRANSACTION_STATE = (
 	(1, 'iniciado'), # the user init the operation
@@ -46,7 +46,7 @@ class BankAccount(models.Model):
 	name = models.CharField('Nombre de la Cuenta', max_length = 100)
 	bank = models.ForeignKey(Bank, on_delete=models.CASCADE)
 	number = models.CharField('Numero', max_length=100)
-	type = models.IntegerField(choices=BANK_ACCOUNT_TYPE)
+	type = models.IntegerField('Tipo de Cuenta' ,choices=BANK_ACCOUNT_TYPE)
 	def __str__(self):
 		return self.name
  
