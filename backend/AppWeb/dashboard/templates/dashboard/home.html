@@ -7,15 +7,23 @@
     <div style="margin-left: 280px; margin-top: 100px"> 
       <img src="../static/dashboard/img/logolargo.png" class="img-fluid" alt="Responsive image" width="390">
     </div>
-    <div class="row titheaderprin" style="margin-left: 270px; margin-top: 95px">
+    <div class="row titheaderprin" style="margin-left: 270px; margin-top: 85px">
       <h1> El mejor <strong> tipo de cambio </strong><br> para cambiar <strong> dólares</strong>, <br> <strong> euros</strong> y <strong>soles online</strong><br> en Arequipa, Peru</h1>
+      <div class ="row" style="margin-top: 20px">
+        <div class="col-2" style="margin-top: 2px">
+          <i class="fas fa-medal fa-3x" width="200"></i>
+        </div>
+        <div class="col-5">
+          <b>Registrados en SUPERINTENDENCIA<br>DE BANCA, SEGUROS Y AFP</b>
+        </div>
+      </div>
     </div>
-    <i class="far fa-award"></i>
+
 
   </div>
  
   <div class="col-6" > 
-    <div style="margin-right: 110px; margin-top: 150px">
+    <div style="margin-right: 200px; margin-top: 150px">
       <h3>Seleccione una moneda</h3>
       {% for coin in coins %}
         <a class="btn btn-outline-dark" href=".?coin={{coin.name}}" role="button">{{ coin.name }}</a>
@@ -23,7 +31,7 @@
       <p>
         <br>
         {% if coin_selected %}
-        ¿En qué cuenta deseas recibir tu dinero?
+        <h4>¿En qué cuenta deseas recibir tu dinero?</h4>
         <select class="form-control">
           {% for bc in bank_accounts %}
             <option>{{bc.name}} - {{bc.number}}</option>
@@ -32,36 +40,42 @@
       </p>
 
 
-      <div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> Tu envias </span> 
-          </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="input-group" >
+            <div class="input-group-prepend" >
+              <span class="input-group-text"> Tu envias </span> 
+            </div>
 
-          <input type="text" class="form-control" id="coinFromValue" aria-label="Dollar amount (with dot and two decimal places)">
-          <div class="input-group-append">
-            <span class="input-group-text" id="coin-from-text">Soles</span>
+            <input type="text" class="form-control" id="coinFromValue" aria-label="Dollar amount (with dot and two decimal places)">
+            <div class="input-group-append">
+              <span class="input-group-text" id="coin-from-text">Soles</span>
+            </div>
+          </div>
+          
+          <br>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> Tu recibes </span>
+            </div>
+
+            <input type="text" readonly class="form-control" id="coinToValue" aria-label="Dollar amount (with dot and two decimal places)">
+            <div class="input-group-append">
+              <span class="input-group-text" id="coin-to-text" readonly>{{coin_selected.name}}</span>
+            </div>
           </div>
         </div>
-
-        <div class="text-center">
-          <button onclick="changeCoin()" class="btn btn-primary">Change</button>
-        </div>
-
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> Tu recibes </span>
+        <center>
+          <div class="col-1">
+            <button onclick="changeCoin()" class="button button5"><i class="fas fa-exchange-alt"></i></button>
           </div>
-
-          <input type="text" readonly class="form-control" id="coinToValue" aria-label="Dollar amount (with dot and two decimal places)">
-          <div class="input-group-append">
-            <span class="input-group-text" id="coin-to-text" readonly>{{coin_selected.name}}</span>
-          </div>
-        </div>
-
+        </center>
       </div>
-
-      <button onclick="enviar()">ENVIAR</button>
+      <br>
+      <center>
+        <a class="btn btn-dark" href="#" role="button">Inicia tu operación</a>
+      </center>
+    
       {% endif %}
     </div>
 
@@ -101,10 +115,6 @@
   function updateCurrencies() {
     $('#coin-from-text').text(coinFrom)
     $('#coin-to-text').text(coinTo)
-  }
-
-  function enviar(){
-
   }
 
   $('#coinFromValue').change(function(){
