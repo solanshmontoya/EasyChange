@@ -31,6 +31,7 @@ class Company(models.Model):
 class Bank(models.Model):
 	name = models.CharField(max_length=50)
 
+#client bank account 
 class BankAccount(models.Model):
 	client = models.ForeignKey(User, on_delete=models.CASCADE)
 	name = models.CharField('Nombre de la Cuenta', max_length = 100)

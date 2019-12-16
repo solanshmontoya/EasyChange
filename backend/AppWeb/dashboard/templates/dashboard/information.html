@@ -1,0 +1,52 @@
+{% extends 'dashboard/layout.html' %}
+{% load static %}
+{% block content %}
+<div style="margin-left: 280px; margin-top: 100px">
+	<h2> <strong>Paso 2/3:</strong> Realiza una tranferencia </h2>
+	<div style="margin-left: 280px; margin-top: 80px; margin-right: 500px">
+		<table class="table">
+
+	  		<tbody>
+			    <tr>
+			      <th scope="row">Nombre de la cuenta</th>
+			      <td>{{company.name}}</td>
+			    </tr>
+	    		
+	    		<tr>
+			      <th scope="row">RUC</th>
+			      <td>{{company.ruc}}</td>
+			    
+	    		</tr>
+			    <tr>
+			      <th scope="row">Cuentas bancarias</th>
+			      <td><strong>Banco: Banco de Crédito del Perú </strong><br>
+						Tipo de Cuenta: Cuenta Corriente<br>
+						Nombre de Cuenta: EasyChange Perú <br>
+						Numero de Cuenta: PEN = 215-39778752-0-56 <br>
+						USD = 215-38998752-0-56 <br>
+						EUR = 191-35930672-0-96
+						<br>
+						<br>
+						<strong>Banco: Scotiabank </strong> <br>
+						Tipo de Cuenta: Cuenta Corriente <br>
+						Nombre de Cuenta: EasyChange Perú <br>
+						Numero de Cuenta: PEN = 7008156876 <br>
+						USD = 7930677054 <br>
+						EUR = 7934567068
+				  </td>
+			      
+			    </tr>
+	  		</tbody>
+		</table>
+		<div class="row">
+			<div class = "col-9">
+				<a class="btn btn-outline-dark" href="{% url 'dashboard:home' %}" role="button"> <i class="fas fa-times"></i>  Cancelar  operación</a>
+			</div>
+			<div class = "col-3">
+				<a class="btn btn-dark" href="{% url 'dashboard:confirm-transaction' %}" role="button">Ya transferí!</a>
+			</div>
+		</div>
+	</div>
+
+</div>
+{% endblock %}
